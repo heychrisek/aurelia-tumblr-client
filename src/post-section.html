@@ -1,0 +1,10 @@
+<template bindable="summary, timestamp, post_url, photos">
+  <div class="photo-section">
+    <p>${summary}</p>
+    <p>${post_url}</p>
+    <p>${timestamp}</p>
+
+    <require from="./thumbnails.html"></require>
+    <thumbnails photos=${photos}>
+  </div>
+</template>

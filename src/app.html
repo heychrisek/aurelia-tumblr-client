@@ -1,3 +1,19 @@
 <template>
-  <h1>${message}</h1>
+  <h1>${title}</h1>
+
+  <form submit.trigger="submit()">
+    <input type="text" value.bind="tumblrName">
+    <input type="submit" value="Get Photos">
+  </form>
+
+  <require from="./post-section.html"></require>
+  <div class="posts">
+    <div repeat.for="post of posts">
+      <post-section summary=${post.summary}
+                    photos=${post.photos}
+                    post_url=${post.photo_url}
+                    timestamp=${post.timestamp} />
+    </div>
+  </div>
+
 </template>
