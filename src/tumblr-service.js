@@ -14,5 +14,4 @@ export class TumblrService {
   tumblrPosts(tumblrName) {
     return this.http.jsonp(`${tumblrName}.tumblr.com/posts/photo?api_key=${apiKey}`, 'callback');
   }
-
 }

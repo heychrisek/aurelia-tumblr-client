@@ -1,19 +1,28 @@
 <template>
-  <h1>${title}</h1>
+  <div class="container">
+    <h1>${title}</h1>
 
-  <form submit.trigger="submit()">
-    <input type="text" value.bind="tumblrName">
-    <input type="submit" value="Get Photos">
-  </form>
-
-  <require from="./post-section.html"></require>
-  <div class="posts">
-    <div repeat.for="post of posts">
-      <post-section summary=${post.summary}
-                    photos=${post.photos}
-                    post_url=${post.photo_url}
-                    timestamp=${post.timestamp} />
+    <div class="form">
+      <form submit.trigger="submit()">
+        <input type="text" value.bind="tumblrName">
+        <input type="submit" value="Get Photos">
+      </form>
     </div>
-  </div>
 
+    <div class="photos">
+      <div class="thumbnails" style="display:flex;">
+        <div repeat.for="post of posts">
+          <compose view-model="./thumbnail"
+                   model.bind="thumbnail"
+                   repeat.for="thumbnail of post.photos" />
+        </div>
+      </div>
+
+      <div class="selected">
+        <span>${selectedPhoto.caption}</span>
+        <img src=${selectedPhoto.highResSrc} />
+      </div>
+    </div>
+
+  </div>
 </template>

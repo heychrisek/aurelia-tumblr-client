@@ -19,6 +19,7 @@
     "aurelia-cli": "^0.18.0",
     "aurelia-testing": "^1.0.0-beta.2.0.0",
     "aurelia-tools": "^0.2.2",
+    "bootstrap": "^3.3.7",
     "browser-sync": "^2.13.0",
     "connect-history-api-fallback": "^1.2.0",
     "gulp": "github:gulpjs/gulp#4.0",
