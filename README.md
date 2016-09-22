@@ -11,6 +11,8 @@ Submitting the form will return any photos from that Tumblr, which will display 
 
 `npm install` to install npm modules.
 
+Add a src/config.js file with your Tumblr API key (`export const apiKey = 'API_KEY_HERE';`).
+
 `au run` to serve application at localhost:9000.
 
 # Tests
